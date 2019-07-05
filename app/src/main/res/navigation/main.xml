@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/usersListFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.sharecare.gitusers.ui.user.UserFragment"
+        android:label="UserFragment" >
+        <argument
+            android:name="login"
+            app:argType="string"/>
+        <argument
+            android:name="avatarUrl"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="com.sharecare.gitusers.ui.userlist.UsersListFragment"
+        android:label="fragment_users_list"
+        tools:layout="@layout/fragment_users_list" >
+        <action
+            android:id="@+id/action_usersListFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+</navigation>
